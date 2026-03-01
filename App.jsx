@@ -478,7 +478,7 @@ Réponds UNIQUEMENT en JSON:
 
     try{
       addLog("info","🔍 Analyse IA en cours...");
-      const res=await fetch("/api/analyze",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-haiku-4-5-20251001",max_tokens:1000,messages:[{role:"user",content:prompt}]})});
+      const res=await fetch("/api/analyze",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-3-5-haiku-20241022",max_tokens:1000,messages:[{role:"user",content:prompt}]})});
       const data=await res.json();
       const raw=data.content?.find(b=>b.type==="text")?.text||"";
       const jm=raw.match(/\{[\s\S]*\}/);
